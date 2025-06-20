@@ -119,7 +119,9 @@ class TypeConverterComponent(Component):
         if isinstance(input_value, str):
             input_value = Message(text=input_value)
 
-        return convert_to_message(input_value)
+        result = convert_to_message(input_value)
+        self.status = result
+        return result
 
     def convert_to_data(self) -> Data:
         """Convert input to Data type."""
@@ -129,7 +131,9 @@ class TypeConverterComponent(Component):
         if isinstance(input_value, str):
             input_value = Message(text=input_value)
 
-        return convert_to_data(input_value)
+        result = convert_to_data(input_value)
+        self.status = result
+        return result
 
     def convert_to_dataframe(self) -> DataFrame:
         """Convert input to DataFrame type."""
@@ -139,4 +143,6 @@ class TypeConverterComponent(Component):
         if isinstance(input_value, str):
             input_value = Message(text=input_value)
 
-        return convert_to_dataframe(input_value)
+        result = convert_to_dataframe(input_value)
+        self.status = result
+        return result
